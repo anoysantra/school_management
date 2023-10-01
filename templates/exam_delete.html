@@ -1,0 +1,50 @@
+<!-- exam_delete.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Exam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #DC3545;
+        }
+
+        p {
+            color: #6C757D;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #DC3545;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Delete Exam</h2>
+    
+    <p>Are you sure you want to delete {{ exam.exam_name }}?</p>
+    
+    <form method="post" action="">
+        {% csrf_token %}
+        <button type="submit">Delete Exam</button>
+    </form>
+
+    <a href="{% url 'class_list' %}">Back to Exam List</a>
+</body>
+
+</html>

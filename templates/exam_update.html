@@ -1,0 +1,46 @@
+<!-- exam_update.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Exam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Update Exam</h2>
+    
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Exam</button>
+    </form>
+
+    <a href="{% url 'class_list' %}">Back to Exam List</a>
+</body>
+
+</html>

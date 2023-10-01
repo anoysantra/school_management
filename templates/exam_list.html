@@ -1,0 +1,55 @@
+<!-- exam_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam List</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Exam List</h2>
+    
+    <ul>
+        {% for exam in exams %}
+            <li>Exam Type: {{ exam.exam_name }} @@ Full Marks:{{exam.full_marks}}</li>
+            <a href="{% url 'exam_delete' exam.exam_name %}">Delete {{exam.exam_name}} </a>
+            <a href="{% url 'exam_update' exam.exam_name %}">Update {{exam.exam_name}}</a>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'exam_add' %}">Add Exam</a>
+</html>
